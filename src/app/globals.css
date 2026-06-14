@@ -1,0 +1,59 @@
+/* ── Google Fonts (Cairo + Tajawal) ──────────────────────── */
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap");
+@import "tailwindcss";
+
+/* ── CSS Custom Properties ───────────────────────────────── */
+@theme {
+  --color-primary:       #104090;
+  --color-primary-light: #2433BB;
+  --color-accent:        #2196F3;
+  --color-accent-light:  #64B5F6;
+
+  --font-cairo:   "Cairo", sans-serif;
+  --font-tajawal: "Tajawal", sans-serif;
+  --font-zain:    "Zain", sans-serif;
+}
+
+/* ── Custom Fonts ─────────────────────────────────────────
+   Place the Zain variable font file at: public/fonts/zain-variable.ttf
+   (used for the Hero title — large display headings)
+──────────────────────────────────────────────────────────── */
+@font-face {
+  font-family: "Zain";
+  src: url("/fonts/zain-variable.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── Base ────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-cairo);
+  direction: rtl;
+  text-align: right;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+* { box-sizing: border-box; }
+
+/* ── Custom Animations ───────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Tailwind utilities we want globally ─────────────────── */
+.font-cairo   { font-family: var(--font-cairo); }
+.font-tajawal { font-family: var(--font-tajawal); }
+.font-zain    { font-family: var(--font-zain); }
+.line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+
+/* ── Swiper RTL fix ──────────────────────────────────────── */
+.swiper-rtl .swiper-button-prev { right: auto; left: 0; }
+.swiper-rtl .swiper-button-next { left: auto; right: 0; }
